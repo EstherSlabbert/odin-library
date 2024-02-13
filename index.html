@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library | Odin Project</title>
+    <link rel="stylesheet" type="text/css" href="./src/style.css">
+</head>
+<body>
+  <div class="page-top">
+    <h1>My Library</h1>
+    <button class="new-book-btn" id="add-new-book">+ New book</button>
+  </div>
+  <dialog class="new-book-dialog"> <!-- open -->
+    <form id="form" onsubmit="event.preventDefault();">
+      <h2 id="form-heading">Add a New Book to your Library</h2>
+      <div class="form-row"><label for="title">Title*: </label><input type="text" id="title" name="title" required class="input-field required unfilled"></div>
+      <div class="form-row"><label for="author">Author*: </label><input type="text" id="author" name="author" required class="input-field required unfilled"></div>
+      <div class="form-row"><label for="pages">No. Pages: </label><input type="text" id="pages" name="pages" class="input-field"></div>
+      <div class="buttons-row"><button type="button" class="close-btn">Close</button><input type="submit" value="Submit" class="submit-btn" id="submit-btn"/></div>
+    </form>
+  </dialog>
+  <dialog class="edit-form-dialog"> <!-- open -->
+    <form id="form" onsubmit="event.preventDefault();" novalidate>
+      <h2 id="form-heading">Edit this Book in your Library</h2>
+      <div class="form-row"><label for="title">Title*: </label><input type="text" id="edit-title" name="edit-title" class="input-field"></div>
+      <div class="form-row"><label for="author">Author*: </label><input type="text" id="edit-author" name="edit-author" class="input-field"></div>
+      <div class="form-row"><label for="pages">No. Pages: </label><input type="text" id="edit-pages" name="edit-pages" class="input-field"></div>
+      <div class="buttons-row"><button type="button" class="cancel-btn" id="cancel-btn">Cancel</button><input type="submit" value="Save" class="save-btn" id="save-btn"/></div>
+    </form>
+  </dialog>
+  <div class="books-container" id="books-container">
+    <script src="./src/script.js"></script>
+    <!-- Comment the script line above & Uncomment the following to see the styling with entries that you do not have to add: -->
+    <!-- <div class="book-card">
+      <div class='main'>
+        <img class='tokenImage' src="./mikolaj-DCzpr09cTXY-unsplash.jpg" alt="book" />
+        <h2>The Wheel of Time: The Gathering Storm</h2>
+        <p class='author'>by Robert Jordan and Brandon Sanderson</p>
+        <p class="details"><span class="read" title="read">&#128214;</span><span class="page-count">Pages: 1120</span><span><button class="edit-book">&#9998; edit</button></span></p>
+        <div class="end-card">
+          <hr />
+          <div class='buttons'>
+            <button class="toggle-read">Mark as unread</button>            
+            <button class="remove-book">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="book-card">
+      <div class='main'>
+        <img class='tokenImage' src="./mikolaj-DCzpr09cTXY-unsplash.jpg" alt="book" />
+        <h2>Pride & Prejudice</h2>
+        <p class='author'>by Jane Austen</p>
+        <p class="details"><span class="page-count">Pages: 100</span> <span class="read" title="read">&#128214;</span></p>
+        <div class="end-card">
+          <hr />
+          <div class='buttons'>
+            <button class="toggle-read">Mark as unread</button>            
+            <button class="remove-book">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="book-card">
+      <div class='main'>
+        <img class='tokenImage' src="./mikolaj-DCzpr09cTXY-unsplash.jpg" alt="book" />
+        <h2>Great Expectations</h2>
+        <p class='author'>by Charles Dickens</p>
+        <p class="details"><span class="page-count">Pages: 448</span> <span class="read" title="read">&#128214;</span></p>
+        <div class="end-card">
+          <hr />
+          <div class='buttons'>
+            <button class="toggle-read">Mark as unread</button>            
+            <button class="remove-book">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="book-card">
+      <div class='main'>
+        <img class='tokenImage' src="./mikolaj-DCzpr09cTXY-unsplash.jpg" alt="book" />
+        <h2>The Guernsey Literary and Potato Peel Pie Society</h2>
+        <p class='author'>by Mary Ann Shaffer and Annie Barrows</p>
+        <p class="details"><span class="page-count">Pages: 274</span><span class="read" title="read">&#128214;</span></p>
+        <div class="end-card">
+          <hr />
+          <div class='buttons'>
+              <button class="toggle-read">Mark as unread</button>            
+              <button class="remove-book">Remove</button>            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="book-card">
+      <div class='main'>
+        <img class='tokenImage' src="./mikolaj-DCzpr09cTXY-unsplash.jpg" alt="book" />
+        <h2>Warbreaker</h2>
+        <p class='author'>by Brandon Sanderson</p>
+        <p class="details"><span class="page-count">Pages: 592</span> <span class="read" title="unread">&#128213;</span></p>
+        <div class="end-card">
+          <hr />
+          <div class='buttons'>
+            <button class="toggle-read">Mark as unread</button>            
+            <button class="remove-book">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="book-card">
+      <div class='main'>
+        <img class='tokenImage' src="./mikolaj-DCzpr09cTXY-unsplash.jpg" alt="book" />
+        <h2>Elantris</h2>
+        <p class='author'>by Brandon Sanderson</p>
+        <p class="details"><span class="page-count">Pages: 656</span> <span class="read" title="unread">&#128213;</span></p>
+      </div>
+      <div class="end-card">
+        <hr />
+        <div class='buttons'>
+          <button class="toggle-read">Mark as unread</button>            
+          <button class="remove-book">Remove</button>
+        </div>
+      </div> -->
+    </div>
+</body>
+</html>
