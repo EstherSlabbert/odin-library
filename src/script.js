@@ -145,7 +145,7 @@ function displayBooksInLibrary() {
 
         const img = document.createElement('img');
         img.className = 'tokenImage';
-        img.src = './mikolaj-DCzpr09cTXY-unsplash.jpg';
+        img.src = '../images/mikolaj-DCzpr09cTXY-unsplash.jpg';
         img.alt = 'book';
         mainElement.appendChild(img);
 
